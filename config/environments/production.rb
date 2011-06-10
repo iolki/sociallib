@@ -41,9 +41,9 @@ SuttonOpenLibrary::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
-    :domain => "ss3ventures.org",
+    :domain => "evening-mountain-610.heroku.com",
     :authentication => "plain",
-    :user_name => "dawid",
+    :user_name => "dawid@ss3ventures.org",
     :password => "southendsucks",
     :enable_starttls_auto => true
 }
