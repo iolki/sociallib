@@ -46,7 +46,8 @@ SuttonOpenLibrary::Application.configure do
     :user_name => "dawid@ss3ventures.org",
     :password => "southendsucks",
     :enable_starttls_auto => true
-}
+  }
+  config.action_mailer.default_url_options = { :host => 'evening-mountain-610.heroku.com' }
   # Enable threaded mode
   # config.threadsafe!
 
