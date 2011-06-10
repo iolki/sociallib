@@ -33,7 +33,7 @@ class MemberMessage < ActionMailer::Base
     @recipient = recipient
     mail(
       :to => recipient.email,
-      :from => "noreply@sutton.gov.uk",
+      :from => "dawid@ss3ventures.org",
       :subject => "Welcome to Sutton Bookshare"
     ) do |format|
       format.html
@@ -46,7 +46,7 @@ class MemberMessage < ActionMailer::Base
 
     mail(
       :to => user.email,
-      :from => "noreply@sutton.gov.uk",
+      :from => "dawid@ss3ventures.org",
       :subject => "Sutton Bookshare password reset instructions"
     ) do |format|
       format.html

@@ -41,9 +41,9 @@ SuttonOpenLibrary::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
-    :domain => "gmail.com",
+    :domain => "ss3ventures.org",
     :authentication => "plain",
-    :user_name => "dawid@ss3ventures.org",
+    :user_name => "dawid",
     :password => "southendsucks",
     :enable_starttls_auto => true
 }
