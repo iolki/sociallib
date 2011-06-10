@@ -1,0 +1,21 @@
+- content_for :head do
+  = auto_discovery_link_tag :atom, author_path(@author, :format => :atom), { :title => "Books by #{@author.name} on Sutton Bookshare" }
+
+%h1
+  = link_to (image_tag 'rss.png'), author_path(@author, :format => :atom)
+  Books by 
+  = @page_title = @author.name
+
+- if @author.titles.count > 0  
+  %table    
+    - for title in @author.titles
+      %tr
+        %td= link_to(image_tag(title.image_url), title_path(title))
+        %td
+          %span.book_list_title
+            = link_to title.title, title_path(title)
+          - unless title.subtitle.nil?
+            %br
+            = title.subtitle
+- else
+  No books currently listed.

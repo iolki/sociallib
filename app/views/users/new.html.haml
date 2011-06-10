@@ -1,0 +1,13 @@
+%h1 Register
+
+%p
+  Fill out this form to join Sutton Bookshare. You'll be able to list your books on this website and lend and borrow books with your neighbours in Sutton.
+  
+%p
+  If you're having trouble registering or if you've got any questions before you join, please 
+  = link_to "contact us", :controller => :pages, :action => :contact
+  
+- form_for @user, :url => account_path do |f|
+  = f.error_messages
+  = render :partial => "form", :object => f
+  = f.submit "Register"

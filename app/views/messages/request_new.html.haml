@@ -1,0 +1,47 @@
+= image_tag @recipient.gravatar_image_url(80)
+
+%h1
+  Request a book from
+  = @recipient.login
+
+%p
+  = link_to image_tag(@book.title.image_url), title_path(@book.title)
+
+
+%p
+  I would like to borrow
+  = link_to @book.title.title, title_path(@book.title)
+  by
+  = link_to @book.title.authors.first.name, author_path(@book.title.authors.first)
+  
+
+.help
+  %p
+    This book
+    - if @book.status == StaticData::BOOK_STATUS['AVAILABLE']
+      is currently available.
+    - elsif @book.status == StaticData::BOOK_STATUS['ONLOAN']
+      is currently on loan. You're free to enquire about it anyway.
+    - else
+      is
+      = @book.status_text
+
+  %p
+    %strong
+      = link_to @recipient.login, :controller => :members, :action => :show, :login => @recipient.login
+    will get an email from you, revealing your email address to them.
+  
+  %p
+    Say when and where you could collect the book. Include your phone number if you're happy for
+    %strong
+      = link_to @recipient.login, :controller => :members, :action => :show, :login => @recipient.login
+    to call you.
+  
+
+%p
+  = form_tag '/messages/request_create' do |f|
+    = hidden_field_tag :recipient, @recipient.login
+    = hidden_field_tag :book, @book.id
+    = text_area_tag :message, '', { :rows => 10, :cols => 50 }
+    %br
+    = submit_tag "Send Request to " + @recipient.login

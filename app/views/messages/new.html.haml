@@ -1,0 +1,16 @@
+= image_tag @recipient.gravatar_image_url(80)
+
+%h1
+  Send a message to
+  = @recipient.login
+  
+.help
+  %strong
+    = @recipient.login
+  will get an email from you, revealing your email address to them.
+%p
+  = form_tag '/messages/create' do |f|
+    = hidden_field_tag :recipient, @recipient.login
+    = text_area_tag :message, '', { :rows => 10, :cols => 50 }
+    %br
+    = submit_tag "Send Message"

@@ -1,0 +1,51 @@
+%h1= @page_title = "My Books"
+
+.panel
+
+
+  = image_tag 'barcode.jpg', :alt => "Barcode example", :id => "barcode"
+
+  %h2 Add a Book
+  
+  = form_tag :action => 'create'
+  %p
+    13-digit ISBN (the number at the bottom of the barcode starting with 978)
+    %br
+    %input.bigfield{ :id => 'isbn13', :type => 'text', :name => 'isbn13', :size => 20, :maxlength => 13 }
+    %input.bigfield{:type => 'submit', :value => 'Add Book' }
+      
+
+
+- if @books.count > 0
+  %table
+    %tr
+      %th
+      %th
+      %th Lent for
+      %th
+  
+    - for book in @books
+      %tr
+        %td= link_to (image_tag book.title.image_url, :height => 80), book.title
+        %td
+          %span.book_list_title
+            = link_to book.title.title, book.title
+          %br 
+          = book.title.subtitle
+          %br
+          %br
+          = link_to book.title.authors.first.name, author_path(book.title.authors.first)
+        %td
+          - if book.status == StaticData::BOOK_STATUS['AVAILABLE']
+            = link_to "Lend", new_loan_path(:book_id => book)
+          - elsif book.status == StaticData::BOOK_STATUS['ONLOAN']
+            = time_ago_in_words book.loans.last.created_at
+          - else
+            = book.status_text
+        %td
+          - if book.status == StaticData::BOOK_STATUS['AVAILABLE']
+            = link_to 'Delete', book, :confirm => 'Are you sure?', :method => :delete
+- else
+  %p You don't have any books.
+
+= set_focus_to_id 'isbn13'

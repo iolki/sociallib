@@ -1,0 +1,16 @@
+%h1= @page_title = @subject.name
+
+- if @subject.titles.count > 0  
+  %table    
+    - for title in @subject.titles
+      %tr
+        %td= link_to(image_tag(title.image_url), title_path(title))
+        %td
+          %span.book_list_title
+            = link_to title.title, title_path(title)
+          - unless title.subtitle.nil?
+            %br
+            = title.subtitle
+          %br
+          %br
+          = link_to title.authors.first.name, author_path(title.authors.first)

@@ -1,0 +1,27 @@
+%h1 Lend a Book
+
+%span{:style => "float: left;"}
+  = link_to (image_tag(@loan.book.title.image_url, :height => 80), title_path(@loan.book.title))
+
+%div{:style => "margin-left: 100px;"}
+  %h2
+    = link_to @loan.book.title.title, title_path(@loan.book.title)
+  
+  %p= @loan.book.title.subtitle
+
+  %p
+    - for author in @loan.book.title.authors
+      %br
+      = link_to author.name, author_path(author)
+
+= form_for @loan do |f|
+  = hidden_field_tag :book_id, @loan.book.id
+  %p
+    Borrower username:
+    %br
+    = text_field_tag :borrower_login, @borrower_login
+
+  = f.submit "Lend Book"
+  
+.help
+  Sutton Bookshare keeps track of how long a book has stayed out on loan for but it doesn't use due dates, fixed loan periods or renewals. You're free to agree and renegotiate the loan period informally with the borrower at any time. This keeps Sutton Bookshare friendly and flexible.

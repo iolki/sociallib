@@ -1,0 +1,231 @@
+body {
+  background-color: #fff; color: #333;
+  width: 960px;
+  margin: 30px auto;
+}
+
+body, p, ol, ul, td {
+  font-family: arial, helvetica, sans-serif;
+  font-size:   100%;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+td
+{
+  border-bottom: 1px solid #eee;
+  padding: 15px 20px 15px 0;
+  margin: 5px 0;
+}
+
+th
+{
+  text-align: left;
+}
+
+.book_list_title
+{
+  font-size: 125%;
+}
+
+h1
+{
+  font-size: 170%;
+}
+
+h2
+{
+  font-size: 130%;
+}
+
+h1.logo
+{
+  color: #d12349;
+  font-size: 250%;
+  margin: 0;
+}
+
+.logo img
+{
+  vertical-align: text-bottom;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#userbar
+{
+  background-color: #eee;
+  padding: 5px 15px;
+  margin: 10px 0 30px 0;
+  vertical-align: center;
+}
+
+#userbar img
+{
+  vertical-align: text-bottom;
+}
+
+#userbar a, #userbar a:visited, #userbar a:hover
+{
+  text-decoration: none;
+}
+
+.panel
+{
+  background-color: beige;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.notice
+{
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  margin: 20px 0;
+}
+
+.alert
+{
+  background-color: red;
+}
+
+#footer
+{
+  margin-top: 70px;
+  padding: 20px 0;
+  border-top: 0px solid #eee;
+  font-size: 90%;
+}
+
+.help
+{
+  padding: 20px;
+  background-color: beige;
+  color: black;
+  margin: 20px 0;
+  line-height: 150%;
+}
+
+.bigfield
+{
+  font-size: 150%;
+}
+
+.access
+{
+  text-align: right;
+  font-size: 90%;
+}
+
+img
+{
+  border: 0;
+}
+
+#barcode
+{
+  float: right;
+  margin-top: 5px;
+}
+
+div
+{
+  margin: 10px 0;
+}
+
+#search
+{
+  text-align: right;
+}
+
+#puffbox
+{
+  background-color: beige;
+  font-size:        100%;
+  padding:          10px 30px;
+  width:            900px;
+}
+
+a.button, a.button:visited
+{
+  background-color: green;
+  color:            white;
+  padding:          10px 20px;
+  text-decoration:  none;
+  font-size:        135%;
+  margin:           20px 0;
+}
+
+a.button:hover
+{
+  background-color: yellow;
+  color:            black;
+  text-decoration:  none;
+}
+
+.clear
+{
+  float: none;
+}
+
+.left_col
+{
+  float: left;
+}
+
+.right_col
+{
+  margin-left: 130px;
+}
+
+.top_spacer
+{
+  margin-top: 30px;
+}

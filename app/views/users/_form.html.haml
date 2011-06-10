@@ -1,0 +1,63 @@
+%p * = required information
+
+%h2 About You
+
+%div
+  = form.label :first_name
+  *
+  %br
+  = form.text_field :first_name
+%div
+  = form.label :last_name
+  *
+  %br
+  = form.text_field :last_name
+%div
+  = form.label :address1
+  *
+  %br
+  = form.text_field :address1
+%div
+  = form.label :address2
+  %br
+  = form.text_field :address2
+%div
+  = form.label :city
+  *
+  %br
+  = form.text_field :city
+%div
+  = form.label :county
+  %br
+  = form.text_field :county
+%div
+  = form.label :postcode
+  *
+  %br
+  = form.text_field :postcode
+%div
+  = form.label :phone
+  %br
+  = form.text_field :phone
+%div
+  = form.label :email
+  *
+  %br
+  = form.text_field :email
+
+%h2 Your Account
+
+%div
+  = form.label "Choose a username (only letters and numbers allowed)"
+  *
+  %br
+  = form.text_field :login
+%div
+  = form.label "Choose a password", form.object.new_record? ? nil : "Change password"
+  %br
+  = form.password_field :password
+%div
+  = form.label "Retype your password"
+  %br
+  = form.password_field :password_confirmation
+  %br

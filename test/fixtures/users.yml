@@ -1,0 +1,49 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+alice:
+  login: alice
+  email: alice@test.test
+  crypted_password: 12345
+  password_salt: 12345
+  persistence_token: 12345
+  single_access_token: 12345
+  perishable_token: 12345
+  login_count: 0
+  failed_login_count: 0
+  last_request_at: 
+  current_login_at:
+  last_login_at:
+  current_login_ip:
+  last_login_ip:
+  first_name: Alice
+  last_name: Smith
+  address1: 123 Any Street
+  address2:
+  city: Anytown
+  county: Anyshire
+  postcode: AN1 1AB
+  phone: 1234567890
+  
+bob:
+  login: bob
+  email: bob@test.test
+  crypted_password: 12345
+  password_salt: 12345
+  persistence_token: 12345
+  single_access_token: 12345
+  perishable_token: 12345
+  login_count: 0
+  failed_login_count: 0
+  last_request_at: 
+  current_login_at:
+  last_login_at:
+  current_login_ip:
+  last_login_ip:
+  first_name: Bob
+  last_name: Brown
+  address1: 456 Another Road
+  address2:
+  city: Anytown
+  county: Anyshire
+  postcode: AN2 2CD
+  phone: 0987654321

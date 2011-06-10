@@ -1,0 +1,24 @@
+%p
+  = link_to image_tag(@sender.gravatar_image_url(80), :alt => @sender.login), url_for( :controller => :members, :action => :show, :login => @sender.login, :only_path => false )
+  
+%p
+  This is a message from
+  = link_to @sender.login, url_for( :controller => :members, :action => :show, :login => @sender.login, :only_path => false )
+  at Sutton Bookshare.
+  
+%p
+  Reply to
+  = @sender.login
+  in the usual way by clicking
+  %strong
+    Reply 
+  in your email program.
+  
+%p
+  This is not an official email from Sutton Council staff.
+  
+%hr
+
+=simple_format h @message
+  
+  

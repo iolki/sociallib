@@ -1,0 +1,26 @@
+%h1 Search Results
+
+%p
+  You searched for
+  %strong
+    = @q
+  -#
+    in
+    = @type
+  
+- if @titles.count > 0
+  %table
+    - for title in @titles
+      %tr
+        %td
+          = link_to image_tag(title.image_url), title_path(title)
+        %td
+          %span{ :class => "book_list_title" }
+            = link_to title.title, title_path(title)
+          %br= title.subtitle
+          %br
+          - for author in title.authors
+            = link_to author.name, author_path(author)
+            %br     
+- else
+  %p We couldn't find anything for your search.

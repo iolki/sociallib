@@ -1,0 +1,15 @@
+%h1 Members
+
+- if @members.count > 0
+  %table
+    %tr
+    - i = 0
+    - for member in @members
+      - i += 1
+      %td
+        = link_to (image_tag member.gravatar_image_url(60), :height => 60, :alt => "#{member.login}"), :controller => :members, :action => :show, :login => member.login
+        %br
+        = link_to member.login, :controller => :members, :action => :show, :login => member.login
+        
+      - if i % 10 == 0
+        %tr

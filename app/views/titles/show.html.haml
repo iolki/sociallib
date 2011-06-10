@@ -1,0 +1,76 @@
+- @page_title = @title.title_and_author
+
+%span.left_col
+  = image_tag @title.image_url, :height => 80, :alt => @title.title_and_author
+
+.right_col
+  %h1
+    = @title.title
+  %p
+    = @title.subtitle
+  %p
+    - for author in @title.authors
+      %br
+      = link_to author.name, author_path(author)
+
+  -# Google Book Search data contains HTML entities so use raw() to preserve them
+  %div= raw @title.description
+  
+  - unless @title.subject.nil?  
+    %p
+      = link_to @title.subject.name, subject_path(@title.subject)
+  
+  %p
+    Search for this book at 
+    %a{ :href => "http://www.librarieswest.org.uk/02_Catalogue/02_004_TitleResults.aspx?page=1&searchTerm="+ @title.isbn10+"&searchType=5&searchTerm2=&media=&branch=&authority=&language=&junior=&referrer=02_001_Search.aspx"  }<
+      Libraries West 
+    and 
+    %a{ :href => "http://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=#{@title.isbn13}" }<
+      Amazon
+
+
+
+  - if @title.books.count > 0 
+
+    %h2.top_spacer You can borrow this book from:
+  
+    %table    
+      - for book in @title.books
+        %tr
+          %td
+            = link_to (image_tag book.user.gravatar_image_url(50), :alt => book.user.login), :controller => :members, :action => :show, :login => book.user.login
+            %br
+            = link_to book.user.login, :controller => :members, :action => :show, :login => book.user.login
+
+          %td
+            - if book.status == StaticData::BOOK_STATUS['AVAILABLE']
+              available
+            - elsif book.status == StaticData::BOOK_STATUS['ONLOAN']
+              on loan
+            - else
+              = book.status_text
+
+          %td
+            - if current_user
+
+              - if current_user.owns?(book)
+                You own this book
+                
+              - elsif current_user.watched?(book)
+                Watched
+                
+              - else
+                = form_for @watching do |f|
+                  = hidden_field_tag :book_id, book.id
+                  = f.submit "Watch Book"
+
+            - else
+              &nbsp;
+
+          %td
+            - if current_user && ! current_user.owns?(book) && (book.status == StaticData::BOOK_STATUS['AVAILABLE'] || book.status == StaticData::BOOK_STATUS['ONLOAN'])
+              = link_to "Request Book", :controller => :messages, :action => :request_new, :book => book, :recipient => book.user.login
+
+  - else               
+    %p No member is currently offering this book.
+    

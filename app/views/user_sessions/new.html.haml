@@ -1,0 +1,20 @@
+%h1 Log In
+-# http://techoctave.com/c7/posts/37-authlogic-and-rails-3-0-solution
+= form_for @user_session, :as => :user_session, :url => {:action => "create"} do |f|
+  = f.error_messages
+  %div
+    = f.label :login
+    %br
+    = f.text_field :login
+  %div
+    = f.label :password
+    %br
+    = f.password_field :password
+  %div
+    = f.check_box :remember_me
+    = f.label :remember_me
+  %div
+    = f.submit "Log In"
+
+  %p
+    = link_to "Forgotten your password?", :controller => :password_resets, :action => :new

@@ -1,0 +1,42 @@
+%h2 Welcome to Social Library
+
+%p Thanks for signing up. You're already logged in and ready to get started.
+
+%h3 Getting Started
+
+%ul
+  %li
+    Add some books you'd like to lend to your
+    = link_to "My Books", books_url
+    page.
+  %li
+    Let your friends and colleagues know about your books by sending them the link to your public books page:
+    = link_to url_for(:controller => 'members', :action => :show, :login =>@recipient.login, :only_path => false), url_for(:controller => 'members', :action => :show, :login => @recipient.login, :only_path => false)
+    
+%h3 Tips
+
+%ul
+  %li
+    You can borrow as many books as you like as long as the owners are happy to lend them to you.
+  %li
+    If someone requests a book from you, you don't have to lend it if you don't want to.
+  %li
+    You can lend a book for a minimum of one week. There's no maximum.
+  %li
+    Need help? Got a comment or complaint? 
+    = link_to "Get in touch.", url_for(:controller => :pages, :action => :contact, :only_path => false)
+  %li
+    Are you on Twitter? Follow 
+    %a{ :href => "http://twitter.com/suttonbookshare" }<
+      @suttonbookshare
+    for new book alerts.
+    
+%hr
+
+%p
+  Your username is
+  %strong
+    = @recipient.login
+  and you can login at
+  = link_to url_for(login_url), login_url
+    

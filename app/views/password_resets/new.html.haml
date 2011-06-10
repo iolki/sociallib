@@ -1,0 +1,8 @@
+%h1 Password Reset
+
+- form_tag password_resets_path do
+  = label_tag "email", "Your email address"
+  %br
+  = text_field_tag "email", "", :size => 50
+  %p
+    = submit_tag "Reset my password"

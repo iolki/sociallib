@@ -1,0 +1,28 @@
+!!!5
+%html
+  %head
+    :css
+      body
+      {
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      
+      h1
+      {  
+        color: #d12349;
+        font-size: 250%;
+      }
+      
+      img
+      {
+        border: 0;
+      }
+
+  %body
+  
+    %h1
+      -#
+        = link_to(image_tag('logo.png'), url_for(:root))
+      Social Library
+    
+    = yield

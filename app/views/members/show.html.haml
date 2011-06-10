@@ -1,0 +1,68 @@
+- content_for :head do
+  = auto_discovery_link_tag :atom, { :controller => :members, :action => :show, :login => @user.login, :format => :atom }, { :title => "#{@user.login}'s Books on Sutton Bookshare" }
+
+%h1= @page_title = @user.login
+
+= image_tag @user.gravatar_image_url(80)
+
+- if current_user == @user
+  .help
+    Add or update your picture here with
+    %a{ :href => 'http://www.gravatar.com/' }<
+      Gravatar
+    using your email address
+    %strong
+      = current_user.email
+
+%p
+  = link_to "Send a message to #{@user.login}", :controller => :messages, :action => :new, :recipient => @user.login
+
+.scorecard
+  %table
+    %tr
+      %td
+        Member since
+        = @user.created_at.strftime("%B %Y")
+    %tr
+      %td
+        = pluralize(@user.books.count, "book")
+        listed
+    %tr
+      %td
+        = pluralize(@user.borrowings.count, "book")
+        borrowed
+    %tr
+      %td
+        = pluralize(@user.loans.count, "book")
+        lent
+    %tr
+      %td
+        = (pluralize(@user.active_borrowings.count, "book"))
+        currently borrowed from others
+    %tr
+      %td
+        = (pluralize(@user.active_loans.count, "book"))
+        currently lent to others
+
+%h2
+  = link_to (image_tag 'rss.png'),  :controller => :members, :action => :show, :login => @user.login, :format => :atom
+  Books
+
+- if @user.books.count > 0
+  %table        
+    - for book in @user.books
+      %tr
+        %td
+          = link_to image_tag(book.title.image_url, :alt => book.title.title_and_author), title_path(book.title)
+        %td
+          %span.book_list_title
+            = link_to book.title.title, title_path(book.title)
+          %br
+            = book.title.subtitle
+          %br
+          %br
+            = link_to book.title.authors.first.name, author_path (book.title.authors.first)
+- else
+  %p
+    = @user.login
+    doesn't have any books to lend right now.

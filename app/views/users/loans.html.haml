@@ -1,0 +1,38 @@
+- @page_title = "Lent"
+
+%h1 Lent to others
+
+- if @loans.count > 0
+  %table
+    %tr
+      %th
+      %th
+      %th Lent
+      %th Borrower
+      %th
+    - for loan in @loans
+      - book = loan.book
+      %tr
+        %td= link_to (image_tag book.title.image_url, :height => 80), book.title
+        %td
+          %span.book_list_title
+            = link_to book.title.title, book.title
+          %br 
+          = book.title.subtitle
+          %br
+          %br
+          = link_to book.title.authors.first.name, author_path(book.title.authors.first)
+          %br
+        %td
+          = time_ago_in_words loan.created_at
+          ago
+        %td
+          = link_to image_tag(loan.borrower.gravatar_image_url(60)), :controller => :members, :action => :show, :login => loan.borrower.login
+          %br
+          = link_to loan.borrower.login, :controller => :members, :action => :show, :login => loan.borrower.login
+        %td
+          = form_for loan, :url => loan_path(loan), :html => { :method => :put } do |f|
+            = f.submit "Check In"
+        
+- else
+  %p You aren't lending any books.

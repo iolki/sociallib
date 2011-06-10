@@ -1,0 +1,6 @@
+%h1= @page_title = "Subjects"
+
+
+- for subject in @subjects
+  %p
+    = link_to subject.name, subject

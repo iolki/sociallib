@@ -1,0 +1,34 @@
+- @page_title = "Borrowed"
+
+%h1 Borrowed from others
+
+- if @loans.count > 0
+  %table
+    %tr
+      %th
+      %th
+      %th Borrowed
+      %th Lender
+      %th
+    - for loan in @loans
+      - book = loan.book
+      %tr
+        %td= link_to (image_tag book.title.image_url, :height => 80), book.title
+        %td
+          %span.book_list_title
+            = link_to book.title.title, book.title
+          %br 
+          = book.title.subtitle
+          %br
+          %br
+          = link_to book.title.authors.first.name, author_path(book.title.authors.first)
+          %br
+        %td
+          = time_ago_in_words loan.created_at
+          ago
+        %td
+          = link_to image_tag(loan.lender.gravatar_image_url(60)), :controller => :members, :action => :show, :login => loan.lender.login
+          %br
+          = link_to loan.lender.login, :controller => :members, :action => :show, :login => loan.lender.login
+- else
+  %p You aren't borrowing any books.
