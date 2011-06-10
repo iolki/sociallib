@@ -36,8 +36,17 @@ SuttonOpenLibrary::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'www.suttonbookshare.org.uk' }
-
+  # config.action_mailer.default_url_options = { :host => 'www.suttonbookshare.org.uk' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "gmail.com",
+    :authentication => "plain",
+    :user_name => "dawid@ss3ventures.org",
+    :password => "southendsucks",
+    :enable_starttls_auto => true
+}
   # Enable threaded mode
   # config.threadsafe!
 
