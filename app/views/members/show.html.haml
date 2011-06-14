@@ -61,7 +61,7 @@
             = book.title.subtitle
           %br
           %br
-            = link_to book.title.authors.first.name, author_path (book.title.authors.first)
+            = link_to book.title.authors.first.name, author_path(book.title.authors.first)
 - else
   %p
     = @user.login
