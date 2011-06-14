@@ -4,7 +4,7 @@
 %p
   This is a message from
   = link_to @sender.login, url_for( :controller => :members, :action => :show, :login => @sender.login, :only_path => false )
-  at Sutton Bookshare.
+  at Social Library.
   
 %p
   Reply to
@@ -13,10 +13,7 @@
   %strong
     Reply 
   in your email program.
-  
-%p
-  This is not an official email from Sutton Council staff.
-  
+   
 %hr
 
 =simple_format h @message

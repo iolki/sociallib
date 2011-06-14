@@ -1,5 +1,5 @@
 - content_for :head do
-  = auto_discovery_link_tag :atom, author_path(@author, :format => :atom), { :title => "Books by #{@author.name} on Sutton Bookshare" }
+  = auto_discovery_link_tag :atom, author_path(@author, :format => :atom), { :title => "Books by #{@author.name} on Social Library" }
 
 %h1
   = link_to (image_tag 'rss.png'), author_path(@author, :format => :atom)

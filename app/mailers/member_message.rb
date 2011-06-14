@@ -7,7 +7,7 @@ class MemberMessage < ActionMailer::Base
     mail(
       :to => recipient.email,
       :from => sender.email,
-      :subject => "Message from Sutton Bookshare member #{@sender.login}"
+      :subject => "Message from Social Library member #{@sender.login}"
     ) do |format|
       format.html
 #       format.text
@@ -22,7 +22,7 @@ class MemberMessage < ActionMailer::Base
     mail(
       :to => recipient.email,
       :from => sender.email,
-      :subject => "Book request for \"#{@book.title.title}\" from Sutton Bookshare member #{@sender.login}"
+      :subject => "Book request for \"#{@book.title.title}\" from Social Library member #{@sender.login}"
     ) do |format|
       format.html
 #       format.text
@@ -34,7 +34,7 @@ class MemberMessage < ActionMailer::Base
     mail(
       :to => recipient.email,
       :from => "dawid@ss3ventures.org",
-      :subject => "Welcome to Sutton Bookshare"
+      :subject => "Welcome to Social Library"
     ) do |format|
       format.html
 #       format.text
@@ -47,7 +47,7 @@ class MemberMessage < ActionMailer::Base
     mail(
       :to => user.email,
       :from => "dawid@ss3ventures.org",
-      :subject => "Sutton Bookshare password reset instructions"
+      :subject => "Social Library password reset instructions"
     ) do |format|
       format.html
       format.text

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Thanks for joining Sutton Bookshare. Welcome!"
+      flash[:notice] = "Thanks for joining Social Library. Welcome!"
       redirect_back_or_default books_path
     else
       render :action => :new

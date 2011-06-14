@@ -1,5 +1,5 @@
 - content_for :head do
-  = auto_discovery_link_tag :atom, { :controller => :members, :action => :show, :login => @user.login, :format => :atom }, { :title => "#{@user.login}'s Books on Sutton Bookshare" }
+  = auto_discovery_link_tag :atom, { :controller => :members, :action => :show, :login => @user.login, :format => :atom }, { :title => "#{@user.login}'s Books on Social Library" }
 
 %h1= @page_title = @user.login
 

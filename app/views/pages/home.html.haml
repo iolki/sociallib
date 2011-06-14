@@ -1,16 +1,16 @@
 - content_for :head do
-  = auto_discovery_link_tag :atom, titles_path(:format => :atom), { :title => "Sutton Bookshare: New books" }
+  = auto_discovery_link_tag :atom, titles_path(:format => :atom), { :title => "Social Library: New books" }
 
 #puffbox
   %p{ :style => 'font-size: 200%' }
-    Lend and borrow books with your neighbours in Sutton
+    Lend and borrow books
 
   - unless current_user
     %p{ :style => 'float: right' }
       = link_to "Sign up now", :register, :class => "button"
     
   %p
-    Sutton Bookshare helps you to lend and borrow books. It's free, easy to use and open to everyone who lives or works in the London Borough of Sutton.
+    Social Library helps you to lend and borrow books. It's free, easy to use and open to everyone.
 
 .clear
   

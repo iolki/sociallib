@@ -6,7 +6,7 @@
   
 %p
   = link_to @sender.login, url_for( :controller => :members, :action => :show, :login => @sender.login, :only_path => false )
-  at Sutton Bookshare would like to borrow
+  at Social Library would like to borrow
   = link_to @book.title.title, title_url(@book.title)
   by
   = link_to @book.title.authors.first.name, author_url(@book.title.authors.first)
@@ -39,8 +39,6 @@
   click this link to mark it as lent:
   = link_to "Lend a Book", url_for( :controller => :loans, :action => :new, :borrower_login => @sender.login, :book_id => @book.id, :only_path => false)
   
-%p
-  This is not an official email from Sutton Council staff.
   
 %hr
 
