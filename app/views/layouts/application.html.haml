@@ -73,6 +73,8 @@
   
       = yield
     
-    #footer 
+    #footer
+ 			=link_to_unless_current "Disclaimer", { :controller => 'pages', :action => 'disclaimer' }
+
       %a{ :href => 'http://www.librarieswest.org.uk/' }<
         Libraries West
