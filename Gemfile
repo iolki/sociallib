@@ -4,7 +4,7 @@ gem 'rails', '3.0.1'
 gem 'authlogic'
 gem 'rails3-generators'
 gem 'dynamic_form'
-# gem 'nokogiri'
+gem 'nokogiri'
 gem 'cuecat'
 gem 'isbn'
 
