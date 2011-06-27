@@ -41,13 +41,13 @@ SuttonOpenLibrary::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
-    :domain => "evening-mountain-610.heroku.com",
+    :domain => "the-social-library.org",
     :authentication => "plain",
     :user_name => "dawid@ss3ventures.org",
     :password => "southendsucks",
     :enable_starttls_auto => true
   }
-  config.action_mailer.default_url_options = { :host => 'evening-mountain-610.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'the-social-library.org' }
   # Enable threaded mode
   # config.threadsafe!
 

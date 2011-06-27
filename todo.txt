@@ -1,0 +1,24 @@
+
+To-do list 
+
+1. On the "add books" page put a notice, that Amazon isbns do not work and in order to add books you should use isbns on real books you own. 
+(Do we need to tell users that you can use Google Books isbns to add books?)  
+
+2. Create a page refresh button on the main page so that users can randomly browse books by reloading the page. 
+
+3. Get rid of the search function -- its not working properly and pisses people off. 
+
+4. Update a copy on the main page ("Lend and borrow books with…") It should say that this is a service for people from Glastonbury.
+
+5. More personal info about the person on the user page. Bio, favourite books, authors, likes and interests... 
+
+6. Create a blog entry for users to post general feedback.
+
+7. Create a "give us your feedback" button on the Sociall Library site linking directly to that post. 
+
+8. Create an intro blogpost (Ken) -- who you are, what do tou want to do, whats your vision.  
+
+9. Have a brainstorm on creative ways to inform community -- different blogposts basically, to trigger different ideas and thoughts. 
+
+
+ 

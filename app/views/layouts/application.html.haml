@@ -8,9 +8,10 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
     = yield :head
+    
     :javascript
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-22101321-1']);
+      _gaq.push(['_setAccount', 'UA-23984097-1']);
       _gaq.push(['_trackPageview']);
     
       (function() {
@@ -75,6 +76,9 @@
     
     #footer
       =link_to_unless_current "Disclaimer", { :controller => 'pages', :action => 'disclaimer' }
-
+      
+      %a{ :href => 'http://blog.the-social-library.org/' }<
+        Blog
+        
       %a{ :href => 'http://www.librarieswest.org.uk/' }<
         Libraries West
