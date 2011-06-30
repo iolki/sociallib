@@ -41,7 +41,7 @@
       = link_to_unless_current "[ home ]", { :controller => 'pages', :action => 'home' }, :accesskey => '1'
       &nbsp;&nbsp;
       - if current_user
-        = image_tag current_user.gravatar_image_url(25), :alt => current_user.login
+      
         Logged in as
         %strong
           = link_to current_user.login, :controller => :members, :action => :show, :login => current_user.login
