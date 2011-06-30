@@ -1,16 +1,20 @@
+
+
 - content_for :head do
   = auto_discovery_link_tag :atom, titles_path(:format => :atom), { :title => "Social Library: New books" }
 
+
+
 #puffbox
-  %p{ :style => 'font-size: 200%' }
-    Lend and borrow books with your neighbours. 
+  %span{:class => 'puffbox_text' }
+    Lend and borrow books with your neighbours
+    <br>in Hammersmith. 
+    
+    
 
   - unless current_user
-    %p{ :style => 'float: right' }
-      = link_to "Sign up now", :register, :class => "button"
-    
-  %p
-    Social Library helps you to lend and borrow books. It's free, easy to use and open to everyone.
+    #button_box
+      = link_to "Sign up!", :register, :class => "button"
 
 .clear
   
@@ -28,3 +32,5 @@
         = link_to (image_tag title.image_url, :height => 80, :alt => title.title_and_author), title
       - if i % 10 == 0
         %tr
+
+

@@ -101,8 +101,11 @@ h1.logo
 
 #userbar
 {
-  background-color: #eee;
-  padding: 5px 15px;
+  background-image:url('../images/top-nav-bar-bg.png');
+  background-repeat:no-repeat;
+  height:35px;
+  width:960px;
+  padding: 11px 15px;
   margin: 10px 0 30px 0;
   vertical-align: center;
 }
@@ -119,7 +122,7 @@ h1.logo
 
 .panel
 {
-  background-color: beige;
+  background-color: #fff;
   padding: 10px 20px;
   margin: 10px 0;
 }
@@ -188,27 +191,58 @@ div
 
 #puffbox
 {
-  background-color: beige;
+  background-image:url('../images/puff-box-bg.png');
+  background-repeat:no-repeat;
   font-size:        100%;
-  padding:          10px 30px;
-  width:            900px;
+  padding-top:          35px;
+  padding-left:30px;
+  width:            960px;
+  height:200px;
+
+  
 }
+
+.puffbox_text 
+{
+	color:#00B100;
+	font-size:30px;
+	background-color:#B9FF3F;
+	line-height:35px;
+}
+
+#button_box 
+{ 
+	width:263px;
+	height:50px;
+	float:right;
+	margin-top:70px;
+	margin-right:35px;
+}
+
 
 a.button, a.button:visited
 {
-  background-color: green;
-  color:            white;
-  padding:          10px 20px;
+  background-image: url('../images/button.png');
+  background-repeat:no-repeat;
+  color:            #FF3800;
+  padding:          13px 82px;
   text-decoration:  none;
-  font-size:        135%;
+  font-size:        25px;
+  line-height:30px;
   margin:           20px 0;
 }
 
 a.button:hover
 {
-  background-color: yellow;
-  color:            black;
+  background-image: url('../images/button_hover.png');
+  background-color:transparent;
+  background-repeat:no-repeat;
+  color:            #fff;
+  padding:          13px 82px;
   text-decoration:  none;
+  font-size:        25px;
+  line-height:30px;
+  margin:           20px 0;
 }
 
 .clear

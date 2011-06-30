@@ -21,7 +21,7 @@
       })();
 
   %body
-  
+    
     .access
       %a{ :href => '#main', :accesskey => 's' }<
         Skip to Content
@@ -30,17 +30,15 @@
       &nbsp;&nbsp;
       =link_to_unless_current "Contact Us", { :controller => 'pages', :action => 'contact' }, :accesskey => '9'
         
-    #search
-      - form_tag(search_path, :method => :get) do
-        = text_field_tag :q, '', { :size => 25, :class => 'bigfield' }
-        = submit_tag "Find Books", { :class => 'bigfield' }
+
+    
         
     %h1.logo
       = link_to(image_tag('heading-sociallibrary.png', :alt => "Social Library logo"), :controller => 'pages', :action => 'home')
-      Social Library
+      
 
     #userbar
-      = link_to_unless_current "Home", { :controller => 'pages', :action => 'home' }, :accesskey => '1'
+      = link_to_unless_current "[ home ]", { :controller => 'pages', :action => 'home' }, :accesskey => '1'
       &nbsp;&nbsp;
       - if current_user
         = image_tag current_user.gravatar_image_url(25), :alt => current_user.login
@@ -48,22 +46,25 @@
         %strong
           = link_to current_user.login, :controller => :members, :action => :show, :login => current_user.login
         &nbsp;&nbsp;
-        = link_to_unless_current "My Books (#{current_user.books.count.to_s})", books_path, :accesskey => '2'
+        = link_to_unless_current "my books (#{current_user.books.count.to_s})", books_path, :accesskey => '2'
         &nbsp;&nbsp;
-        = link_to_unless_current "Lent (#{current_user.active_loans.count.to_s})", :lent, :accesskey => '3'
+        = link_to_unless_current "lent (#{current_user.active_loans.count.to_s})", :lent, :accesskey => '3'
         &nbsp;&nbsp;
-        = link_to_unless_current "Borrowed (#{current_user.active_borrowings.count.to_s})", :borrowings, :accesskey => '4'
+        = link_to_unless_current "borrowed (#{current_user.active_borrowings.count.to_s})", :borrowings, :accesskey => '4'
         &nbsp;&nbsp;
-        = link_to_unless_current "Watch List (#{current_user.watched_books.count.to_s})", :watchlist, :accesskey => '5'
+        = link_to_unless_current "watch list (#{current_user.watched_books.count.to_s})", :watchlist, :accesskey => '5'
         -#
           &nbsp;&nbsp;
-          = link_to_unless_current "My Account", :account, :accesskey => '6'
+          = link_to_unless_current "my account", :account, :accesskey => '6'
         &nbsp;&nbsp;
-        = link_to_unless_current "Log Out", :logout, :method => :delete, :confirm => "Are you sure you want to logout?"
+        = link_to_unless_current "[ log out ]", :logout, :method => :delete, :confirm => "Are you sure you want to logout?"
       - else
-        = link_to_unless_current "Register", :register
+        = link_to_unless_current "[ register ]", :register
         &nbsp;&nbsp;
-        = link_to_unless_current "Log In", :login
+        = link_to_unless_current "[ log in ]", :login
+        &nbsp;&nbsp;
+        %a{ :href => 'http://blog.the-social-library.org/' }<
+          blog
     
     #main
       
