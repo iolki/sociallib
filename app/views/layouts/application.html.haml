@@ -58,6 +58,9 @@
           = link_to_unless_current "my account", :account, :accesskey => '6'
         &nbsp;&nbsp;
         = link_to_unless_current "[ log out ]", :logout, :method => :delete, :confirm => "Are you sure you want to logout?"
+        &nbsp;&nbsp;
+        %a{ :href => 'http://blog.the-social-library.org/' }<
+          blog
       - else
         = link_to_unless_current "[ register ]", :register
         &nbsp;&nbsp;
