@@ -46,7 +46,7 @@ class MemberMessage < ActionMailer::Base
 
     mail(
       :to => user.email,
-      :from => "dawid@ss3ventures.org",
+      :from => "noreply@the-social-library.org",
       :subject => "Social Library password reset instructions"
     ) do |format|
       format.html
