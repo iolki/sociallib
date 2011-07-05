@@ -33,7 +33,7 @@ class MemberMessage < ActionMailer::Base
     @recipient = recipient
     mail(
       :to => recipient.email,
-      :from => "dawid@ss3ventures.org",
+      :from => "noreply@the-social-library.org",
       :subject => "Welcome to Social Library"
     ) do |format|
       format.html
