@@ -1,0 +1,32 @@
+%h1 
+  Users list for Philipp
+
+%p
+  %b
+    Total nr of users
+  = @users.count
+- if @users.any?  
+  %ul
+    - @users.each do |user|
+      %p
+        Login: 
+        = user.login
+      %p 
+        Email:
+        = user.email
+      %p 
+        Last time logged in:
+        = user.last_login_at
+      %p 
+        First name:
+        = user.first_name
+      %p 
+        Last name:
+        = user.last_name
+      %p 
+        City:  
+        = user.city
+      %p 
+        Postcode:
+        =user.postcode
+        

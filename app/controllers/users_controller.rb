@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create, :show]
-  before_filter :require_user, :only => [:edit, :update, :watched_books, :loans]
+  before_filter :require_user, :only => [:edit, :update, :watched_books, :loans, :index]
   
+  
+  def index
+    @users = User.all
+  end
+    
   def new
     @user = User.new
   end
