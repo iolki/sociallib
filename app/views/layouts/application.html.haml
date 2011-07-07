@@ -75,6 +75,37 @@
         &nbsp;&nbsp;
         %a{ :href => 'http://blog.the-social-library.org/' }<
           blog
+          
+    #vision_box 
+      %span{:class => 'vision_text' }
+        The vision is to re-think the future of books and libraries with the internet build in.<br>
+        To create a great product opening broader connections between books and people,<br> 
+        making it more dynamic, interactive, alive, exciting.<br> 
+        It could be something like Facebook meets Ebay and Match.com.<br><br> 
+        To give the community free access to books<br> 
+        but also to prompt them to use books as an excuse<br> 
+        for the community to start engaging with each other more.<br><br>
+        Or it could be something entirely different,<br> 
+        still as exciting and as dynamic. <br><br>
+     
+    #vision_box2 
+      %span{:class => 'vision_text2' }
+        Right now the-social-library is in its very infancy<br>
+        it the very beginning. 
+        Its just a basic tool for sharing books<br> and a blog to reflect on it.<br>
+        It doesn't have many features, might not be very user-friendly,<br> 
+        might lack a couple of substantial things,<br> 
+        but its a very base of a great vision.<br>  
+        At the moment we see it as a research tool,<br> 
+        as a platform to build on.
+
+    #easy_box 
+      %span{:class => 'easy_text' }
+        It's easy! 
+        Just log on, register and add books you want to swap!
+      %a{ :href => 'http://blog.the-social-library.org/', :class => 'easy_info_text' }<
+        For more information please see our blog.
+          
     
     #main
       
@@ -84,6 +115,9 @@
         .notice.alert= flash.alert
   
       = yield
+      
+          
+          
     
     #footer
       =link_to_unless_current "Disclaimer", { :controller => 'pages', :action => 'disclaimer' }

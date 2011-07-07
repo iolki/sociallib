@@ -264,3 +264,57 @@ a.button:hover
 {
   margin-top: 30px;
 }
+
+
+#poll_box 
+{ 
+	width:400px;
+	height:400px;
+	background-color: #ccc;
+}
+#vision_box 
+{ 
+	width:800px;
+	background-color: #fff;
+	height:270px;
+}
+#vision_box2 
+{ 
+	width:550px;
+	background-color: #fff;
+	margin-bottom:110px;
+	margin-left:500px;
+}
+.vision_text
+{
+	color:#0093D8;
+	font-size:18px;
+	line-height:24px;
+	background-color:#E4E5E6;
+}
+.vision_text2
+{
+	color:#ccc;
+	font-size:15px;
+	line-height:18px;
+}
+
+#easy_box 
+{ 
+	width:870px;
+	background-color: #fff;
+	margin-bottom:20px;
+}
+.easy_text
+{
+	color:#999;
+	font-size:30px;
+	line-height:35px;
+}
+.easy_info_text
+{
+	color:#BFBFBF;
+	font-size:15px;
+	line-height:18px;
+	text-decoration:underline;
+}
