@@ -10,11 +10,38 @@
     Lend and borrow books with your neighbours
     <br>in Somerset. 
     
+    - unless current_user
+      #button_box
+        = link_to "Sign up!", :register, :class => "button"
     
+#vision_box 
+  %span{:class => 'vision_text' }
+    The social library vision is to re-think the future of books and libraries with the internet built-in.<br>
+    We aim to create a great product that opens broader connections between books and people,<br>
+    making it more dynamic, interactive, alive and exciting.<br><br>
 
-  - unless current_user
-    #button_box
-      = link_to "Sign up!", :register, :class => "button"
+    We want to give the community free access to books<br>
+    but also to prompt them to use books as an excuse<br>
+    for the community to start engaging with each other more.<br>
+     
+#vision_box2 
+  %span{:class => 'vision_text2' }
+    Right now the Social Library is in its' infancy.<br>
+    It's just a basic tool for sharing books<br>
+    and a blog to reflect on this.<br>
+    It doesn't have many features,it's not very user-friendly<br>
+    and it lacks some substantial things.<br>
+    But, it's the beginning of a great vision.<br>
+    At the moment we see it as<br> 
+    a platform for us all to build on.<br>
+
+#easy_box 
+  %span{:class => 'easy_text' }
+    It's easy! 
+    Just log on, register and add books you want to swap!
+  %a{ :href => 'http://blog.the-social-library.org/', :class => 'easy_info_text' }<
+    For more information please see our blog.
+          
 
 .clear
   

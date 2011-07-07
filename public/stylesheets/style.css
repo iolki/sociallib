@@ -276,14 +276,13 @@ a.button:hover
 { 
 	width:800px;
 	background-color: #fff;
-	height:270px;
+	height:210px;
 }
 #vision_box2 
 { 
 	width:550px;
 	background-color: #fff;
-	margin-bottom:110px;
-	margin-left:500px;
+	margin-bottom:60px;
 }
 .vision_text
 {
@@ -294,7 +293,7 @@ a.button:hover
 }
 .vision_text2
 {
-	color:#ccc;
+	color:#999;
 	font-size:15px;
 	line-height:18px;
 }
